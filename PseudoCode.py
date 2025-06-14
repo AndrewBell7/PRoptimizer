@@ -80,17 +80,17 @@ NA	gray
 Pvalues = ["0.00001","0.0001","0.001","0.01"]
 Rvalues = ["0.2","0.4","0.6","0.8"]
 
-
+'''
 print(Pvalues)
 print(Rvalues)
-
+'''
 
 for P in Pvalues:
     for R in Rvalues:
-        Network_analyses_command = "./Network_analyses.py -j "+JOBname+" -m BXB -s "+OutGroup+" -p "+str(P)+" -r "+str(R)+" -y fg -f ERC_results_BXB.tsv -c pearson"
+        Network_analyses_command = "./Network_analyses.py -j "+JOBname+" -m BXB -s "+OutGroup+" -p "+str(P)+" -r "+str(R)+" -y fg -f ERC_results_BXB.tsv -c pearson --Func_cat"
         print(Network_analyses_command)
-        #os.system(Network_analyses_command)
-        break
+        os.system(Network_analyses_command)
+
 
 # out directory: /scratch/bella7/ERCnet2/ERCnet/OUT_ERCFungiJune4/Network_analyses/ Func Cat Tsv
 
